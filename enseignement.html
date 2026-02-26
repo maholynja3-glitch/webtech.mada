@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande & Inscription | Web Tech Mada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon: #00f2ff; --bg: #050505; --input: #0d1117; }
+        body { background: var(--bg); color: white; font-family: 'Plus Jakarta Sans', sans-serif; padding: 40px 5%; margin: 0; }
+        
+        .container { 
+            max-width: 600px; margin: auto; background: rgba(255, 255, 255, 0.02); 
+            padding: 40px; border-radius: 30px; border: 1px solid rgba(0, 242, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        h1 { color: var(--neon); text-align: center; font-size: 2rem; text-transform: uppercase; margin-bottom: 30px; letter-spacing: 2px; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #888; font-size: 0.85rem; text-transform: uppercase; }
+        
+        input, select, textarea { 
+            width: 100%; padding: 15px; background: var(--input); border: 1px solid #30363d; 
+            color: white; border-radius: 12px; font-size: 1rem; box-sizing: border-box; transition: 0.3s;
+        }
+        input:focus, select:focus, textarea:focus { border-color: var(--neon); outline: none; box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); }
+
+        select { cursor: pointer; appearance: none; }
+        option { background: #0d1117; }
+
+        .btn-send { 
+            width: 100%; padding: 18px; background: var(--neon); color: black; 
+            border: none; border-radius: 15px; font-weight: 800; cursor: pointer; 
+            text-transform: uppercase; margin-top: 20px; transition: 0.3s;
+        }
+        .btn-send:hover { transform: scale(1.02); box-shadow: 0 0 30px var(--neon); }
+        
+        .footer-link { display: block; text-align: center; margin-top: 25px; color: #555; text-decoration: none; font-size: 0.9rem; }
+        .footer-link:hover { color: var(--neon); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Finalize Request</h1>
+    
+    <form action="save_all.php" method="POST">
+        
+        <div class="form-group">
+            <label>Anarana feno</label>
+            <input type="text" name="anarana" placeholder="Jean Rakoto" required>
+        </div>
+
+        <div class="form-group">
+            <label>Laharana finday</label>
+            <input type="text" name="numero" placeholder="034 00 000 00" required>
+        </div>
+
+        <div class="form-group">
+            <label>Facebook (Anarana na Link)</label>
+            <input type="text" name="facebook" placeholder="fb.com/anaranao" required>
+        </div>
+
+        <div class="form-group">
+            <label>Inona ny tolotra ilainao?</label>
+            <select name="type_site" required>
+                <option value="" disabled selected>Safidio ny tolotra...</option>
+                <option value="Site Basique (100.000 Ar)">Site Basique (100.000 Ar)</option>
+                <option value="Site Normal (250.000 Ar)">Site Normal (250.000 Ar)</option>
+                <option value="Site Premium (500.000 Ar)">Site Premium (500.000 Ar)</option>
+                <option value="Fianarana Web Tech">Fianarana Web Tech</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Andinindininy fanampiny (Optionnel)</label>
+            <textarea name="description" rows="3" placeholder="Lazao eto raha misy zavatra manokana..."></textarea>
+        </div>
+
+        <form action="save_all.php" method="POST">
+   <button type="submit">Alefa</button>
+</form>
+    </form>
+    
+    <a href="index.html" class="footer-link">← Hiverina amin'ny Accueil</a>
+</div>
+
+</body>
+</html>
